@@ -1,0 +1,539 @@
+/* src/pages/Contact.css */
+
+.contact-page {
+  min-height: 100vh;
+  padding: 100px 0 80px;
+  background: #F5F5F5; /* About section background */
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%23000000" fill-opacity="0.03" points="0,0 1000,1000 0,1000"/><circle fill="%23000000" fill-opacity="0.02" cx="700" cy="300" r="400"/></svg>');
+  pointer-events: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-page h1 {
+  text-align: center;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #000000; /* About section text color */
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.page-subtitle {
+  text-align: center;
+  font-size: 1.3rem;
+  color: #333333; /* Dark gray for subtitle */
+  margin-bottom: 60px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-page h1::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: #C58710; /* Golden accent color */
+  border-radius: 2px;
+}
+
+/* Contact Content Layout */
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+/* Contact Information Styles */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-card {
+  background: #ffffff; /* White card background */
+  border-radius: 25px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(197, 135, 16, 0.1); /* Golden accent border */
+  height: fit-content;
+}
+
+.info-card h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #000000; /* Black text */
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.info-description {
+  text-align: center;
+  color: #333333; /* Dark gray for description */
+  margin-bottom: 35px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  border-left: 4px solid #C58710; /* Golden accent border */
+  text-decoration: none;
+  color: inherit;
+}
+
+.contact-item:hover {
+  background: white;
+  transform: translateX(5px);
+  box-shadow: 0 5px 20px rgba(197, 135, 16, 0.1); /* Golden shadow */
+}
+
+.clickable {
+  cursor: pointer;
+  position: relative;
+}
+
+.clickable:hover {
+  background: white;
+  transform: translateX(5px);
+  box-shadow: 0 5px 20px rgba(197, 135, 16, 0.1);
+}
+
+.clickable::after {
+  content: '↗';
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #C58710;
+  font-weight: bold;
+  font-size: 1.2rem;
+  opacity: 0;
+  transform: translateX(-5px);
+  transition: all 0.3s ease;
+}
+
+.clickable:hover::after {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.contact-icon {
+  font-size: 1.5rem;
+  margin-top: 2px;
+  color: #C58710; /* Golden accent color */
+}
+
+.contact-text {
+  flex: 1;
+}
+
+.contact-text strong {
+  display: block;
+  color: #000000; /* Black text */
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+
+.contact-text span {
+  display: block;
+  color: #C58710; /* Golden accent color */
+  font-weight: 500;
+  margin-bottom: 3px;
+}
+
+.contact-text small {
+  color: #666666; /* Medium gray */
+  font-size: 0.85rem;
+}
+
+/* Social Media Section */
+.social-section {
+  border-top: 1px solid rgba(197, 135, 16, 0.2); /* Golden accent border */
+  padding-top: 30px;
+}
+
+.social-section h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #000000; /* Black text */
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.social-section > p {
+  text-align: center;
+  color: #333333; /* Dark gray */
+  margin-bottom: 25px;
+}
+
+.social-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+
+.social-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 15px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+  border-left: 4px solid #C58710; /* Golden accent border */
+  position: relative;
+}
+
+.social-card:hover {
+  background: white;
+  transform: translateX(5px);
+  box-shadow: 0 5px 20px rgba(197, 135, 16, 0.1); /* Golden shadow */
+}
+
+.social-icon {
+  font-size: 1.8rem;
+  color: #C58710; /* Golden accent color */
+}
+
+.social-info {
+  flex: 1;
+}
+
+.social-info strong {
+  display: block;
+  color: #000000; /* Black text */
+  margin-bottom: 3px;
+}
+
+.social-info span {
+  color: #666666; /* Medium gray */
+  font-size: 0.9rem;
+}
+
+.social-arrow {
+  color: #C58710; /* Golden accent color */
+  font-weight: bold;
+  font-size: 1.2rem;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+}
+
+.social-card:hover .social-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Contact Form Styles */
+.contact-form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-card {
+  background: #ffffff; /* White card background */
+  border-radius: 25px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(197, 135, 16, 0.1); /* Golden accent border */
+  height: fit-content;
+}
+
+.form-card h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #000000; /* Black text */
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.form-description {
+  text-align: center;
+  color: #333333; /* Dark gray for description */
+  margin-bottom: 35px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Quick Action Banner */
+.quick-action-banner {
+  background: rgba(197, 135, 16, 0.1); /* Golden accent with transparency */
+  border-radius: 25px;
+  padding: 50px 40px;
+  text-align: center;
+  color: #000000; /* Black text */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(197, 135, 16, 0.2); /* Golden accent border */
+}
+
+.banner-content h4 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #000000; /* Black text */
+}
+
+.banner-content > p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #333333; /* Dark gray */
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.banner-actions {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.action-btn {
+  padding: 15px 30px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 2px solid #C58710; /* Golden accent border */
+}
+
+.whatsapp-btn {
+  background: #C58710; /* Golden accent color */
+  color: #000000; /* Black text */
+  box-shadow: 0 5px 20px rgba(197, 135, 16, 0.3);
+}
+
+.whatsapp-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(197, 135, 16, 0.4);
+  background: #000000; /* Black background on hover */
+  color: #C58710; /* Golden text on hover */
+}
+
+.call-btn {
+  background: transparent;
+  color: #000000; /* Black text */
+  border: 2px solid #C58710; /* Golden accent border */
+}
+
+.call-btn:hover {
+  background: #C58710; /* Golden accent color */
+  color: #000000; /* Black text */
+  transform: translateY(-3px);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.info-card,
+.form-card,
+.quick-action-banner {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.form-card {
+  animation-delay: 0.1s;
+}
+
+.quick-action-banner {
+  animation-delay: 0.2s;
+}
+
+/* Focus styles for accessibility */
+.contact-item:focus,
+.social-card:focus,
+.action-btn:focus {
+  outline: 2px solid #C58710;
+  outline-offset: 2px;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .info-card,
+  .form-card {
+    padding: 30px 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-page {
+    padding: 80px 0 60px;
+  }
+  
+  .contact-page h1 {
+    font-size: 2.8rem;
+  }
+  
+  .page-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+  }
+  
+  .info-card h3,
+  .form-card h3 {
+    font-size: 1.8rem;
+  }
+  
+  .quick-action-banner {
+    padding: 40px 30px;
+  }
+  
+  .banner-content h4 {
+    font-size: 1.8rem;
+  }
+  
+  .banner-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .action-btn {
+    width: 100%;
+    max-width: 250px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-page h1 {
+    font-size: 2.2rem;
+  }
+  
+  .info-card,
+  .form-card {
+    padding: 25px 20px;
+    border-radius: 20px;
+  }
+  
+  .contact-item {
+    padding: 15px;
+  }
+  
+  .social-card {
+    padding: 15px;
+  }
+  
+  .quick-action-banner {
+    padding: 30px 20px;
+  }
+  
+  .banner-content h4 {
+    font-size: 1.5rem;
+  }
+  
+  .clickable::after {
+    top: 15px;
+    right: 15px;
+  }
+}
+
+/* High contrast support */
+@media (prefers-contrast: high) {
+  .contact-page {
+    background: #F5F5F5;
+  }
+  
+  .info-card,
+  .form-card,
+  .quick-action-banner {
+    border: 2px solid #000000;
+  }
+  
+  .contact-item,
+  .social-card {
+    border: 1px solid #000000;
+  }
+  
+  .contact-item:hover,
+  .social-card:hover {
+    border-color: #C58710;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .contact-item,
+  .social-card,
+  .action-btn,
+  .info-card,
+  .form-card,
+  .quick-action-banner,
+  .clickable::after {
+    transition: none;
+    animation: none;
+  }
+  
+  .contact-item:hover,
+  .social-card:hover {
+    transform: none;
+  }
+  
+  .action-btn:hover {
+    transform: none;
+  }
+  
+  .social-arrow {
+    transition: none;
+  }
+  
+  .clickable:hover::after {
+    opacity: 1;
+    transform: none;
+  }
+}

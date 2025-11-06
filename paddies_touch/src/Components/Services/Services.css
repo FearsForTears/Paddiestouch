@@ -1,0 +1,319 @@
+/* src/components/Services/Services.css */
+
+.services {
+  padding: 80px 0;
+  background: #FFFFFF; /* Services background color */
+  position: relative;
+  overflow: hidden;
+}
+
+.services::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%23ffffff" fill-opacity="0.1" points="0,1000 1000,0 1000,1000"/></svg>');
+  pointer-events: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.services h2 {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #000000; /* Services text color */
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.services h2::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: #C58710; /* Services accent color */
+  border-radius: 2px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.service-card {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 40px 30px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.service-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.service-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+  z-index: 2;
+}
+
+.service-card:hover::before {
+  left: 100%;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(197, 135, 16, 0.4);
+}
+
+.service-card:hover .service-overlay {
+  background: linear-gradient(
+    135deg,
+    rgba(197, 135, 16, 0.8) 0%,
+    rgba(0, 0, 0, 0.6) 50%,
+    rgba(197, 135, 16, 0.8) 100%
+  );
+}
+
+.service-icon {
+  font-size: 4rem;
+  margin-bottom: 25px;
+  display: inline-block;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+  color: #FFFFFF;
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.1) rotate(5deg);
+  color: #C58710;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.7));
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.service-card:hover h3 {
+  color: #C58710;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+  transform: scale(1.05);
+}
+
+.service-card p {
+  color: #E8E8E8;
+  line-height: 1.6;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  font-weight: 500;
+}
+
+.service-card:hover p {
+  color: #FFFFFF;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Accent color highlights for specific elements */
+.service-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background: #C58710; /* Accent color */
+  transition: width 0.3s ease;
+  border-radius: 2px 2px 0 0;
+  z-index: 2;
+}
+
+.service-card:hover::after {
+  width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .services {
+    padding: 60px 0;
+  }
+  
+  .services h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+  }
+  
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  
+  .service-card {
+    padding: 30px 20px;
+    min-height: 250px;
+  }
+  
+  .service-icon {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .services {
+    padding: 40px 0;
+  }
+  
+  .services h2 {
+    font-size: 2rem;
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .service-card {
+    padding: 25px 15px;
+    min-height: 220px;
+  }
+  
+  .service-icon {
+    font-size: 3rem;
+  }
+}
+
+/* Animation for scroll reveal */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.service-card {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Stagger animation for cards */
+.service-card:nth-child(1) { animation-delay: 0.1s; }
+.service-card:nth-child(2) { animation-delay: 0.2s; }
+.service-card:nth-child(3) { animation-delay: 0.3s; }
+.service-card:nth-child(4) { animation-delay: 0.4s; }
+.service-card:nth-child(5) { animation-delay: 0.5s; }
+.service-card:nth-child(6) { animation-delay: 0.6s; }
+
+/* Focus styles for accessibility */
+.service-card:focus-within {
+  outline: 2px solid #C58710; /* Accent color */
+  outline-offset: 4px;
+  border-radius: 20px;
+}
+
+/* High contrast support */
+@media (prefers-contrast: high) {
+  .services {
+    background: #B0B0B0;
+    border-top: 3px solid #000000;
+    border-bottom: 3px solid #000000;
+  }
+  
+  .services h2 {
+    color: #000000;
+  }
+  
+  .services h2::after {
+    background: #C58710;
+    height: 4px;
+  }
+  
+  .service-overlay {
+    background: rgba(0, 0, 0, 0.9) !important;
+  }
+  
+  .service-card:hover .service-overlay {
+    background: rgba(197, 135, 16, 0.9) !important;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .service-card,
+  .service-icon,
+  .service-card::before,
+  .service-content {
+    transition: none;
+    animation: none;
+  }
+  
+  .service-card:hover {
+    transform: none;
+  }
+  
+  .service-card:hover .service-icon {
+    transform: none;
+  }
+  
+  .service-card:hover h3 {
+    transform: none;
+  }
+}
